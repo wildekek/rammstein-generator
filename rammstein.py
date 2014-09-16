@@ -8,30 +8,20 @@ def makeLine(lyric='', start=0, stop=False):
         stop = len(lyricParts)
     return ' '.join(lyricParts[start:stop]).capitalize()
 
-def verse():
-    text = ''
-    for x in xrange(2):
-        text += makeLine(lyrics[0], 0, 3)+'\n'
-        text += makeLine(lyrics[0], 1, 4)+'\n'
-    return text
-
-def bridge1():
-    text = makeLine(lyrics[0], 0, 3)+'\n'
-    for x in xrange(2):
-        text += makeLine(lyrics[0], 1, 4)+'\n'
-    return text
-
-def bridge2():
-    text = ''
-    for x in xrange(3):
-        text += makeLine(lyrics[0], 1, 5)+'\n'
-    text += makeLine(lyrics[0], 5, 10)+'\n'
-    return text
-
-def chorus():
-    return makeLine(lyrics[1], 0)+'\n'+makeLine(lyrics[2], 0)+'\n'+makeLine(lyrics[3], 0)+'\n'
-
-def song():
-    return verse()+'\n'+verse()+'\n'+bridge1()+'\n'+bridge2()+'\n'+chorus()+'\n'+chorus()+'\n'+verse()+'\n'+bridge1()+'\n'+bridge2()+'\n'+chorus()+'\n'+chorus()+'\n'+chorus()
-
-print song()
+for x in range(2):
+    print makeLine(lyrics[0], 0, 3)+'\n'+makeLine(lyrics[0], 1, 4)
+print
+for x in range(2):
+    for y in range(2):
+        print makeLine(lyrics[0], 0, 3)+'\n'+makeLine(lyrics[0], 1, 4)
+    print
+    print makeLine(lyrics[0], 0, 3)
+    for y in range(2):
+        print makeLine(lyrics[0], 1, 4)
+    print
+    for y in range(3):
+        print makeLine(lyrics[0], 1, 5)
+    print makeLine(lyrics[0], 5, 10)+'\n'
+    for y in range(2):
+        print makeLine(lyrics[1], 0)+'\n'+makeLine(lyrics[2], 0)+'\n'+makeLine(lyrics[3], 0)+'\n'
+print makeLine(lyrics[1], 0)+'\n'+makeLine(lyrics[2], 0)+'\n'+makeLine(lyrics[3], 0)
